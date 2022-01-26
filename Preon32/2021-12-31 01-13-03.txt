@@ -1,0 +1,76 @@
+Bab 1
+\chapter{Pendahuluan}
+\label{chap:intro}
+   
+\section{Latar Belakang}
+\label{sec:label}
+
+PreonVM adalah sebuah {\it virtual machine} dari Virtenio yang disediakan untuk {\it embedded system} sensor Preon32. {\it Virtual Machine} (VM) ini akan langsung berjalan pada sebuah mikrokontroler dan mendukung operasi sampai dengan 64-{\it bit}. {\it Virtual Machine} (VM) juga memungkinkan mengeksekusi aplikasi standar Java pada Preon32 dan karena itu Virtenio menyediakan {\it library} (API) untuk {\it interface} dan dapat dijalankan oleh Preon32.
+
+{\it Library} Preon32 ini sendiri memiliki banyak {\it package class} yang dapat digunakan dalam sensor maupun yang digunakan dalam berinteraksi dengan sensor melalui \textit{Universal Serial Bus} (USB) atau \textit{Universal Asynchronous Receiver-Transmitter} (UART). Sinyal analog dapat diambil sampelnya dengan konverter sinyal analog ke sinyal digital yang terintegrasi. Resolusi tinggi 12 \textit{bit} yang dimiliki Preon32 memungkinan laju pengambilan sampel hingga satu juta sampel per detik memisahkan modul Preon32 dari produk pesaing.
+
+Sesuai dengan apa yang saya ketahui dari Bapak Elisati Hulu bahwa selama ini untuk \textit{interface} program dari komputer ke sensor ini langsung menggunakan \textit{library-library} yang disediakan oleh Virtenio dan semua itu sangat terbatas oleh \textit{package - package class} yang tersedia dan ada juga yang langsung dipakai di dalam kode program itu sendiri. Dengan alasan tersebut maka perlu dibangun modul untuk \textit{interface} antara program yang ada di komputer dengan Preon32 yang \textit{attach} ke komputer melalui \textit{Universal Serial Bus} (USB) atau \textit{Universal Asynchronous Receiver-Transmitter} (UART) dengan program Java dengan bantuan {\it package class} dari \textit{library} yang disediakan oleh Virtenio maupun dengan menambahkan \textit{package class} sehingga memungkinkan kita sebagai pengguna untuk lebih mudah dalam hal membaca dan atau menulis data dari atau ke Preon32 dan memberikan modul - modul yang berkaitan dengan pengecekan speksifikasi dari sensor Preon32.
+
+Pada skripsi ini, akan dibuat sebuah modul {\it interface} antara program yang ada di komputer dengan Preon32 yang tersambung ke komputer melalui \textit{Universal Serial Bus} (USB) atau \textit{Universal Asynchronous Receiver-Transmitter} (UART).
+
+
+
+\section{Rumusan Masalah}
+\label{sec:rumusan}
+Rumusan masalah berdasarkan latar belakang yang sudah dijelaskan yaitu:
+\begin{itemize}
+    \item Bagaimana melakukan perancangan desain modul \textit{interface} yang mudah dipahami oleh semua tipe \textit{user}?
+	\item Bagaimana cara membangun modul \textit{interface} antara komputer dan Preon32 melalui \textit{Universal Serial Bus} (USB) atau \textit{Universal Asynchronous Receiver-Transmitter} (UART)?
+\end{itemize}
+
+\newpage
+
+\section{Tujuan}
+\label{sec:tujuan}
+Tujuan dari topik ini adalah sebagai berikut:
+\begin{itemize}
+    \item Mengeksplorasi \textit{library} PreonVM dari Preon32.
+    \item Membangun modul {\it interface} yang siap digunakan antara komputer dengan Preon32 melalui \textit{Universal Serial Bus} (USB) atau \textit{Universal Asynchronous Receiver-Transmitter} (UART) dengan program Java.
+\end{itemize}
+
+\section{Batasan Masalah}
+\label{sec:batasan}
+Penelitian ini dibuat berdasarkan batasan-batasan sebagai berikut:
+\begin{enumerate}
+    %\item Fokus utama penelitian ini adalah mengeksplorasi \textit{PreonVM} dan membangun modul \textit{interface} melalui USB dengan komputer yang baik.
+    \item Aplikasi yang dibuat hanya berjalan pada 1 buah \textit{sensor node} terhubung ke komputer melalui USB atau UART.
+    \item File yang dikirim kedalam sensor merupakan file .txt.
+\end{enumerate}
+
+
+\section{Metodologi}
+\label{sec:metlit}
+Berikut ini adalah langkah-langkah yang dilakukan untuk mengerjakan penelitian ini, antara lain:
+\begin{enumerate}
+    \item Melakukan studi literatur mengenai Preon32, \textit{interface library} PreonVM, \textit{Universal Serial Bus} (USB) atau \textit{Universal Asynchronous Receiver-Transmitter} (UART).
+    \item Mempelajari cara memvisualisasikan modul \textit{interface} pada perangkat lunak.
+    \item Melakukan analisis terhadap perangkat lunak yang dibangun.
+    \item Melakukan perancangan untuk perangkat lunak yang dibangun.
+    \item Mengimplementasikan perangkat lunak sesuai hasil analisis dan rancangan.
+    \item Melakukan pengujian terhadap perangkat lunak.
+    \item Menganalisis hasil pengujian yang telah dilakukan.
+    \item Membuat dokumentasi dari penelitian pengembangan modul \textit{interface} melalui \textit{Universal Serial Bus} (USB) atau \textit{Universal Asynchronous Receiver-Transmitter} (UART).
+\end{enumerate}
+
+\section{Sistematika Pembahasan}
+\label{sec:sispem}
+Sistematika pembahasan pada Eksplorasi PreonVM dan Membangun Modul \textit{Interface} USB dengan Komputer ini adalah:
+
+    Bab 1 memuat pendahuluan yang membahas latar belakang masalah, rumusan masalah, tujuan, batasan masalah, metodologi penelitian yang menjadi acuan penelitian, dan sistematika pembahasan.
+    
+    Bab 2 memuat dasar teori yang mendukung berjalannya perancangan dan pengembangan Eksplorasi PreonVM dan Membangun Modul Interface USB dengan Komputer. Berisikan dasar teori tentang \textit{Wireless Sensor Network} (WSN), Node Sensor, Preon32, USB, UART dan USART.
+    
+    Bab 3 memuat analisis yang membahas deskripsi singkat perangkat lunak, analisis kebutuhan perangkat lunak, analisis cara kerja sistem.
+    
+    Bab 4 memuat perancangan yang membahas perancangan Eksplorasi PreonVM dan Membangun Modul \textit{Interface} USB dengan Komputer. Berisi tentang perancangan modul \textit{interface} secara rinci mengenai fitur-fitur dari perangkat lunak.
+    
+    Bab 5 memuat implementasi dan pengujian yang membahas implementasi dari hasil rancangan pengujian dari modul \textit{Interface} USB dengan Komputer yang telah dibuat dan pengujian modul yang telah dibuat.
+    
+    Bab 6 memuat kesimpulan yang membahas kesimpulan dari hasil pengujian dan saran untuk pengembangan selanjutnya.
+
+

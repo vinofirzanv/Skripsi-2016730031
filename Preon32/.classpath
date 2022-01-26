@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Asus/Desktop/Keperluan Skripsi/Skripsi/Commander/Preon32_1.5/tools/commander/Commander.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Asus/Desktop/Keperluan Skripsi/Skripsi/Commander/Preon32_1.5/tools/commander/jna.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Asus/Desktop/Keperluan Skripsi/Skripsi/Commander/Preon32_1.5/tools/commander/purejavacomm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Asus/Desktop/Keperluan Skripsi/Skripsi/jar buat skripsi eclipse/jSerialComm-2.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Asus/Desktop/Keperluan Skripsi/Skripsi/jar buat skripsi eclipse/org.apache.tools.ant-1.6.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Asus/Downloads/ant-launcher-1.10.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Asus/Desktop/billy/ant-tools-1.8.0-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

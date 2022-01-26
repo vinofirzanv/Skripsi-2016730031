@@ -1,0 +1,115 @@
+    \subsubsection{\textit{Security and Privacy}} 
+    Setiap \textit{sensor node} harus memiliki mekanisme keamanan yang memadai untuk mencegah akses yang tidak sah, serangan, dan kerusakan informasi yang tidak disengaja maupun yang disengaja di dalam \textit{sensor node}.
+   
+    \subsubsection{\textit{Distributed Sensing and Processing}}
+    Sejumlah besar \textit{sensor node} didistribusikan secara seragam atau acak. Setiap node WSN mampu mengumpulkan, menyortir, memproses, menggabungkan, dan mengirim data ke \textit{sink}. Oleh karena itu, penginderaan terdistribusi memberikan ketahanan sistem.
+    
+    \subsubsection{\textit{Dynamic Network Topology}}
+    Secara umum WSN adalah sebuah jaringan dinamis. \textit{sensor node} dapat gagal karena kehabisan baterai atau keadaan lain, saluran komunikasi dapat terganggu serta \textit{sensor node} tambahan dapat ditambahkan ke jaringan yang mengakibatkan seringnya perubahan dalam topologi jaringan. Dengan demikian, node WSN harus tertanam dengan fungsi konfigurasi ulang dan penyesuaian diri.
+    
+    \subsubsection{\textit{Self-Organization}}
+    Sebuah \textit{sensor node} di dalam jaringan harus memiliki kemampuan untuk mengatur diri mereka sendiri saat \textit{sensor node} disebarkan dengan cara yang tidak diketahui di lingkungan yang tidak dijaga dan bermusuhan. \textit{sensor node} bekerja sama untuk menyesuaikan diri dengan algoritma yang terdistribusi dan membentuk jaringan secara otomatis.
+    
+    \subsubsection{\textit{Multi-Hop Communication}}
+    Sejumlah besar \textit{sensor node} digunakan di WSN. Jadi, cara yang layak untuk berkomunikasi dengan \textit{sinker} atau \textit{base station} adalah dengan cara mengambil bantuan node perantara melalui jalur \textit{routing}. Jika seseorang perlu berkomunikasi dengan node atau \textit{base station} lain yang berada di luar frekuensi radionya, maka harus melalui rute \textit{multi-hop} oleh node perantara.
+    
+    \subsubsection{\textit{Application Oriented}}
+    WSN berbeda dari jaringan konvensional karena sifatnya. Hal ini sangat tergantung pada rentang aplikasi dari militer, lingkungan serta sektor kesehatan. Node disebarkan secara acak dan direntangkan tergantung pada jenis penggunaan.
+    
+    \subsubsection{\textit{Robust Operations}}
+    Karena sensor akan disebarkan di lingkungan yang besar dan terkadang tidak bersahabat. Jadi, \textit{sensor node} harus salah dan toleran terhadap kesalahan. Oleh karena itu, \textit{sensor node} harus memiliki kemampuan seperti \textit{self-test}, \textit{self-calibrate}, dan \textit{self-repair}.
+    
+    \subsubsection{\textit{Small Physical Size}}
+    \textit{Sensor node} umumnya berukuran kecil dengan kisaran terbatas. Karena ukurannya yang terbatas, energinya yang terbatas membuat kemampuan komunikasi menjadi rendah.
+    
+    \subsection{Topologi WSN \cite{topololgi}}
+    Pada jaringan WSN biasanya menggunakan sebuah topologi yang berfungsi untuk meyakinkan semua jaringan yang dibangun dapat saling berkomunikasi atau sudah sesuai dengan tujuannya. Topologi yang biasa digunakan oleh WSN adalah \textit{star}, \textit{mesh} atau, \textit{tree}, namun masih banyak contoh topologi lain seperti topologi \textit{point-to-point}, \textit{ring}, \textit{linear}, dan \textit{bus}.
+    
+    \subsubsection{Topologi \textit{Point-to-Point}}
+    Topologi \textit{point-to-point} menghubungkan dua titik akhir seperti pada Gambar \ref{fig:point}. Topologi ini bisa permanen atau \textit{switched}. Topologi \textit{point-to-point} permanen adalah koneksi yang tertanam antara dua titik. Topologi \textit{switched point-top-point} adalah koneksi yang dapat dipindahkan di antara node akhir yang berbeda.
+    \begin{figure}[htp]
+    \centering
+    \includegraphics[width=6cm]{Gambar/Pointtopoints.jpg}
+    \caption{Topologi \textit{Point-to-Point}}
+    \label{fig:point}
+    \end{figure}
+    
+    \subsubsection{Topologi \textit{Bus}}
+    Topologi \textit{bus} adalah konfigurasi di mana setiap node terhubung ke komunikasi \textit{bus} bersama, seperti yang ditunjukkan pada Gambar \ref{fig:buss}. Sebuah sinyal ditransmisikan kedua arah di sepanjang \textit{bus} hingga mencapai tujuan yang dituju. Jaringan \textit{bus} harus menyertakan sistem penghindaran tabrakan untuk menyelesaikan masalah ketika dua node secara bersamaan mengirimkan data di \textit{bus}. Jaringan \textit{bus} ini sederhana dan mudah dipasang. Namun, ada satu titik kegagalan atau jika \textit{bus} gagal, seluruh jaringan akan gagal.
+    \begin{figure}[htp]
+    \centering
+    \includegraphics[width=6cm]{Gambar/Buss.jpg}
+    \caption{Topologi \textit{Bus}}
+    \label{fig:buss}
+    \end{figure}
+    
+    \subsubsection{Topologi \textit{Linear}}
+    Topologi \textit{linear} adalah hubungan dua arah antara satu node dan node berikutnya, seperti yang ditunjukkan pada Gambar \ref{fig:Linear}. Ada dua node penghentian di ujung jaringan yang memiliki satu koneksi ke node terdekat, dan semua node lainnya terhubung ke dua node lainnya. Di dalam topologi \textit{Linear} ini, node saling bergantung satu sama lain untuk menyebarkan pesan ke node berikutnya. Jika sebuah node gagal, setiap node yang terhubung ke node tersebut terputus dari jaringan.
+    \begin{figure}[htp]
+    \centering
+    \includegraphics[width=6cm]{Gambar/Linears.jpg}
+    \caption{Topologi \textit{Linear}}
+    \label{fig:Linear}
+    \end{figure}
+    \newpage
+    \subsubsection{Topologi \textit{Ring}}
+    Topologi \textit{ring} adalah jaringan yang diatur secara melingkar, seperti yang ditunjukkan pada Gambar \ref{fig:Ring}. Topologi ini mirip dengan topologi linier, di mana simpul akhir terhubung satu sama lain. Dalam konfigurasi ini, setiap node terhubung ke tepat dua node lain dan data mengalir dalam satu arah dari sumber ke setiap node hingga menemukan penerima yang dituju. Topologi ini mudah dipasang dan dikonfigurasi ulang. Namun, biaya pengelolaannya mahal karena jaringan ring dapat terganggu oleh kegagalan satu node. Banyak jaringan menambahkan ring komunikasi kedua yang dapat mengirimkan data ke arah yang berlawanan untuk mengatasi masalah ini. Topologi ini adalah cara umum untuk menghubungkan kantor kecil dan sekolah, tetapi jarang digunakan lagi.
+     
+     \begin{figure}[htp]
+    \centering
+    \includegraphics[width=6cm]{Gambar/Rings.jpg}
+    \caption{Topologi \textit{Ring}}
+    \label{fig:Ring}
+    \end{figure}
+    
+    \subsubsection{Topologi \textit{Star}}
+    Topologi \textit{star} adalah salah satu topologi jaringan sensor yang paling umum. Topologi \textit{star} terdiri dari satu "simpul pusat", seperti \textit{hub} atau \textit{switch} yang dihubungkan ke setiap simpul dalam jaringan, seperti yang ditunjukkan pada Gambar \ref{fig:Star}. Topologi ini mudah dirancang, diterapkan, dan diperluas. Semua lalu lintas data mengalir melalui node pusat. Oleh karena itu, diperlukan simpul pusat yang cerdas. Kegagalan node ini akan mengakibatkan kegagalan seluruh jaringan.
+    \begin{figure}[htp]
+    \centering
+    \includegraphics[width=6cm]{Gambar/Stars.jpg}
+    \caption{Topologi \textit{Star}}
+    \label{fig:Star}
+    \end{figure}
+    \newpage
+    \subsubsection{Topologi \textit{Tree}}
+    Topologi \textit{tree} adalah node hierarki di mana tingkat tertinggi dari hierarki adalah satu \textit{root node}, dan node ini terhubung ke satu atau banyak simpul pada tingkat di bawahnya, seperti yang ditunjukkan pada Gambar \ref{fig:Tree}. Topologi \textit{tree} dapat berisi banyak tingkatan node. Pemrosesan dan daya dalam node meningkat saat data bergerak dari cabang pohon menuju \textit{root node}, hal ini memungkinkan data untuk diproses di dekat tempat data dihasilkan. Topologi ini dapat diskalakan dan strukturnya yang sederhana memudahkan untuk mengidentifikasi dan mengisolasi kesalahan. Jaringan \textit{tree} akan menjadi semakin sulit untuk dikelola jika mereka semakin besar.
+    
+    \begin{figure}[htp]
+    \centering
+    \includegraphics[width=6cm]{Gambar/Trees.jpg}
+    \caption{Topologi \textit{Tree}}
+    \label{fig:Tree}
+    \end{figure}
+    
+    \subsubsection{Topologi \textit{Mesh}}
+    Node topologi \textit{mesh} menyebarkan datanya sendiri dan juga bertindak sebagai \textit{relay} untuk menyebarkan data dari node lain. Ada dua bentuk topologi \textit{mesh} yaitu \textit{partially connected mesh}, dimana beberapa node terhubung ke lebih dari satu node lainnya, ditunjukkan pada Gambar \ref{fig:Mesh} dan \textit{fully connected mesh}, di mana setiap node terhubung ke setiap node lain di \textit{mesh}, seperti ditunjukkan pada Gambar \ref{fig:Full}. Jaringan \textit{mesh} menyembuhkan diri sendiri, karena data dapat dirutekan di sepanjang jalur yang berbeda jika node gagal. Jaringan \textit{fully connected mesh} ini tidak cocok untuk jaringan sensor besar karena jumlah koneksi yang diperlukan menjadi tidak dapat dikelola. Jaringan \textit{partially connected mesh} memberikan kemampuan pemulihan sendiri dari jaringan yang terhubung sepenuhnya tanpa \textit{overhead} koneksi. Topologi \textit{mesh} paling sering ditemukan di jaringan nirkabel.
+    
+    \begin{figure}[!htb]
+    \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{Gambar/mesh.jpeg}
+    \caption{Topologi \textit{Mesh}}
+    \label{fig:Mesh}
+    \end{minipage}
+    \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=.7\linewidth]{Gambar/full.jpeg}
+    \caption{\textit{Fully connected mesh}}
+    \label{fig:Full}
+     \end{minipage}
+    \end{figure}
+
+    
+    \subsection{Sistem Operasi}
+    Setiap \textit{sensor node} memerlukan sistem operasi untuk mengontrol aktivitas-aktivitasnya dan memastikan agar perangkatnya dapat bekerja dan dimanfaatkan secara optimal. Sistem operasi berfungsi untuk menyediakan sebuah fungsi-fungsi dasar untuk mengatur cara kerja dari perangkat keras dan perangkat lunak, termasuk menyediakan \textit{interface} pemrograman untuk pengembangan aplikasi WSN. Berikut merupakan beberapa contoh sistem operasi WSN yaitu:
+    \begin{itemize}
+        \item TinyOS
+        \item Contiki
+        \item Nano-RK
+        \item LiteOS
+        \item RTOS
+        \item PreonVM
+    \end{itemize}
+    
+    \subsection{Protokol \textit{Stack} pada WSN \cite{Open}} 
+    Ar

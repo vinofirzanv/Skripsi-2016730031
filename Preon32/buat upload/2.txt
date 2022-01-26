@@ -1,0 +1,357 @@
+Potongan kode program diatas digunakan untuk menulis satu \textit{byte} ke perangkat USART, dengan cara memanggil \textit{method} write(b) dengan parameter b untuk menentukan data \textit{byte} untuk menulis.
+   
+    \begin{lstlisting}
+    	public void run() {
+    		new Thread() {
+    			public void run() {
+    				reader();
+    			}
+    		}.start();
+    
+    		writer();
+    
+    		System.out.flush();
+    	}
+    \end{lstlisting}
+    	public void run() {
+    		new Thread() {
+    			public void run() {
+    				reader();
+    			}
+    		}.start();
+    
+    		writer();
+    
+    		System.out.flush();
+    	}
+    \end{lstlisting}
+			do {
+				try {
+					choiceentry = scanner.nextInt();
+					conn.write(choiceentry);
+				}}}}
+   \end{lstlisting}
+\end{lstlisting}
+			
+			do {
+				try {
+					choiceentry = scanner.nextInt();
+					conn.write(choiceentry);
+				}}}}
+   \end{lstlisting}
+    Potongan kode program diatas digunakan untuk menjalankan keseluruhan kode diatas dengan memanggil \textit{method} reader() dan writer() lalu dikeluarkan dengan \textit{method} flush() agar menjamin bahwa data terakhir yang telah ditulis benar-benar keluar ke \textit{file}.
+   \item SerialFlashExample.java \newline
+   Potongan kode program ini dapat digunakan untuk mengetahui kapasitas memori Flash dengan memanggil \textit{method} getSectorSize().
+   \begin{lstlisting}
+       import com.virtenio.driver.flash.Flash;
+       public static void main(String[] args) throws Exception {
+		System.out.println("TEST FLASH");
+		Flash flash = Node.getInstance().getFlash();
+		flash.open();
+		flash.getSectorSize();
+		}
+   \end{lstlisting}
+   \begin{lstlisting}
+        import com.virtenio.commander.io.DataConnection;
+        import com.virtenio.commander.toolsets.preon32.Preon32Helper;
+        public void init() throws Exception {
+		try {
+            Preon32Helper nodeHelper = new Preon32Helper("COM8", 115200);
+			DataConnection conn = nodeHelper.runModule("basestation");
+			BufferedInputStream in = new BufferedInputStream(conn.getInputStream());
+			int choiceentry = -1;
+			scanner = new Scanner(System.in);
+			conn.flush();
+			do {
+				try {
+					choiceentry = scanner.nextInt();
+					conn.write(choiceentry);
+				}}}}
+   \end{lstlisting}
+   \item Handler.java \newline
+   Potongan kode program dibawah ini digunakan untuk memulai koneksi memanggil \textit{method} yang dimiliki oleh com.virtenio.commander.toolsets.preon32.Preon32Helper dengan cara membuat objek baru demgam nama nodeHelper dari class Preon32Helper dengan parameter(COM, baudrate) dan dengan memanggil method yang dimiliki dari com.virtenio.commander.io.DataConnection dengan di awali dengan membuat objek baru dengan nama conn dari DataConnection dengan memanggil method nodeHelper.runModule(String) yang dimiliki oleh nodeHelper dengan parameter(nama \textit{sensor node}) setelah itu digunakan sebuah method conn.flush() untuk menghapus perangkat USART dan conn.write(int) untuk mulai menulis input 1 byte kedalam USART. 
+\begin{lstlisting}
+        import com.virtenio.commander.io.DataConnection;
+        import com.virtenio.commander.toolsets.preon32.Preon32Helper;
+        public void init() throws Exception {
+		try {
+            Preon32Helper nodeHelper = new Preon32Helper("COM8", 115200);
+			DataConnection conn = nodeHelper.runModule("basestation");
+			BufferedInputStream in = new BufferedInputStream(conn.getInputStream());
+			int choiceentry = -1;
+			scanner = new Scanner(System.in);
+			conn.flush();
+			do {
+				try {
+					choiceentry = scanner.nextInt();
+					conn.write(choiceentry);
+				}}}}
+   \end{lstlisting}
+   \begin{lstlisting}
+        import com.virtenio.commander.io.DataConnection;
+        import com.virtenio.commander.toolsets.preon32.Preon32Helper;
+        public void init() throws Exception {
+		try {
+            Preon32Helper nodeHelper = new Preon32Helper("COM8", 115200);
+			DataConnection conn = nodeHelper.runModule("basestation");
+			BufferedInputStream in = new BufferedInputStream(conn.getInputStream());
+			int choiceentry = -1;
+			scanner = new Scanner(System.in);
+			conn.flush();
+			do {
+				try {
+					choiceentry = scanner.nextInt();
+					conn.write(choiceentry);
+				}}}}
+   \end{lstlisting}
+  
+\end{itemize}
+
+\section{Deskripsi Perangkat Lunak}
+Pada skripsi ini akan dibangun sebuah aplikasi atau sebuah API yang dapat dipanggil untuk menulis dan membaca \textit{file} secara sekaligus dari komputer ke \textit{sensor node} Preon32 ataupun sebaliknya melalui \textit{Universal Serial Bus} (USB) atau \textit{Universal Asynchronous Receiver-Transmitter} (UART) dengan menggunakan \textit{class library} yang disediakan oleh Virtenio. Untuk memperjelas gambaran perangkat lunak yang akan dibangun, dapat dilihat pada gambar \ref{fig:arsitekturPL} yang menunjukkan bagaimana alur komunikasi yang terjadi pada perangkat lunak yang dibangun.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=10cm]{Gambar/Arsitektur Perangkat Lunak.png}
+    \caption{Arsitektur Perangkat Lunak}
+    \label{fig:arsitekturPL}
+\end{figure}
+
+Aplikasi ini memiliki beberapa fitur, dengan fitur utama pada aplikasi ini adalah menulis dan membaca \textit{file} secara sekaligus. Fitur lain pada aplikasi ini adalah sebagai berikut:
+\begin{enumerate}
+    \item Melihat komponen \textit{sensor node}.
+    \item Melihat kapasitas memori Flash Preon32.
+    \item Membuka dan menginisiasi COM.
+   
+\end{enumerate}
+
+Fitur melihat komponen \textit{sensor node} untuk membantu pengguna dalam mengetahui komponen apa saja yang ada di dalam \textit{sensor node}. 
+
+Fitur melihat kapasitas memori Flash Preon32 digunakan untuk melihat kapasitas memori yang ada di Flash sehingga pengguna dapat mengetahui sisa memori yang tersedia dalam Flash.
+
+Fitur membuka dan menginisiasi COM digunakan agar pengguna dapat langsung melihat dan menginisiasi COM yang tersambung untuk saling berkomunikasi dan bertukar data antara komputer dengan Preon32. Fungsi lain ini dijelaskan menggunakan diagram \textit{use case} pada Gambar dan skenario pada Tabel \ref{COM} sampai Tabel \ref{Exit}.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=10cm]{Gambar/Use Case Skripsi.png}
+    \caption{Diagram \textit{use case} Aplikasi Baca Tulis \textit{File}}
+    \label{fig:usecase}
+\end{figure}
+\newpage
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{5cm}|p{10cm}| } 
+\hline
+\rowcolor{lightgray} Nama & Membuka Dan Menginisiasi COM \\ 
+\hline
+Deskripsi & Memudahkan pengguna untuk melihat, membuka dan menginisiasi COM pada saat \textit{sensor node} disambungkan dengan komputer  \\ 
+\hline
+Aktor & Pengguna \\
+\hline
+Pre-kondisi & Aplikasi sudah dijalankan dan pengguna memilih "\textit{Check} COM"\\
+\hline
+Alur Skenario & \begin{enumerate}
+    \item Pengguna menjalankan aplikasi.
+    \item Sistem memuat aplikasi.
+    \item Sistem menampilkan pilihan untuk dipilih oleh pengguna.
+    \item Pengguna memilih "\textit{Check} COM".
+    \item Sistem menampilkan keterangan mengenain COM.
+    \item Sistem kembali pada tampilan utama.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\label{COM}
+\caption{Tabel skenario Membuka Dan Menginisiasi COM}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{5cm}|p{10cm}| } 
+\hline
+\rowcolor{lightgray} Nama & Melihat Komponen Node Sensor \\ 
+\hline
+Deskripsi & Membantu pengguna dalam hal mengetahui komponen apa saja yang ada di dalam \textit{sensor node}  \\ 
+\hline
+Aktor & Pengguna \\
+\hline
+Pre-kondisi & Aplikasi sudah dijalankan dan pengguna memilih "\textit{Check} Komponen"\\
+\hline
+Alur Skenario & \begin{enumerate}
+    \item Pengguna menjalankan aplikasi.
+    \item Sistem memuat aplikasi.
+    \item Sistem menampilkan pilihan untuk dipilih oleh pengguna.
+    \item Pengguna memilih "\textit{Check} Komponen".
+    \item Sistem menampilkan keterangan mengenai komponen \textit{sensor node} yang menyala.
+    \item Sistem kembali pada tampilan utama.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\label{Check}
+\caption{Tabel skenario Melihat Komponen Node Sensor.}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{5cm}|p{10cm}| } 
+\hline
+\rowcolor{lightgray} Nama & \textit{Upload File} \\ 
+\hline
+Deskripsi & Pengguna dapat mengunggah \textit{file} dari atau ke \textit{sensor node}  \\ 
+\hline
+Aktor & Pengguna \\
+\hline
+Pre-kondisi & Aplikasi sudah dijalankan dan pengguna memilih "\textit{Upload File}"\\
+\hline
+Alur Skenario & \begin{enumerate}
+    \item Pengguna menjalankan aplikasi.
+    \item Sistem memuat aplikasi.
+    \item Sistem menampilkan pilihan untuk dipilih oleh pengguna.
+    \item Pengguna memilih "\textit{Upload File}".
+    \item Pengguna memasukkan \textit{file}.
+    \item Pengguna menekan tombol "\textit{Upload}".
+    \item Sistem menampilkan status "\textit{Success}".
+    \item Sistem kembali pada tampilan utama.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\label{Upload}
+\caption{Tabel skenario \textit{Upload File}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{5cm}|p{10cm}| } 
+\hline
+\rowcolor{lightgray} Nama & \textit{Download File} \\ 
+\hline
+Deskripsi & Pengguna dapat mengunduh \textit{file} dari atau di \textit{sensor node}  \\ 
+\hline
+Aktor & Pengguna \\
+\hline
+Pre-kondisi & Aplikasi sudah dijalankan dan pengguna memilih "\textit{Download File}"\\
+\hline
+Alur Skenario & \begin{enumerate}
+    \item Pengguna menjalankan aplikasi.
+    \item Sistem memuat aplikasi.
+    \item Sistem menampilkan pilihan untuk dipilih oleh pengguna.
+    \item Pengguna memilih "\textit{Download File}".
+    \item Sistem menampilkan data.
+    \item Sistem kembali pada tampilan utama.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\label{Download}
+\caption{Tabel skenario \textit{Download File}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{5cm}|p{10cm}| } 
+\hline
+\rowcolor{lightgray} Nama & Melihat Kapasitas Memori Flash \\ 
+\hline
+Deskripsi & Membantu pengguna mengetahui sisa memori yang tersedia dalam Flash.  \\ 
+\hline
+Aktor & Pengguna \\
+\hline
+Pre-kondisi & Aplikasi sudah dijalankan dan pengguna memilih "\textit{Check Memori Flash}"\\
+\hline
+Alur Skenario & \begin{enumerate}
+    \item Pengguna menjalankan aplikasi.
+    \item Sistem memuat aplikasi.
+    \item Sistem menampilkan pilihan untuk dipilih oleh pengguna.
+    \item Pengguna memilih \textit{"Check Memori Flash"}.
+    \item Sistem menampilkan keterangan mengenai kapasitas memori Flash.
+    \item Sistem kembali pada tampilan utama.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\label{Flash}
+\caption{Tabel skenario Melihat Kapasitas Memori Flash}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{5cm}|p{10cm}| } 
+\hline
+\rowcolor{lightgray} Nama & \textit{Restart} Node Sensor \\ 
+\hline
+Deskripsi & Membantu pengguna untuk \textit{restart} \textit{sensor node}  \\ 
+\hline
+Aktor & Pengguna \\
+\hline
+Pre-kondisi & Aplikasi sudah dijalankan dan pengguna memilih "\textit{Restart} Node Sensor"\\
+\hline
+Alur Skenario & \begin{enumerate}
+    \item Pengguna menjalankan aplikasi.
+    \item Sistem memuat aplikasi.
+    \item Sistem menampilkan pilihan untuk dipilih oleh pengguna.
+    \item Pengguna memilih "\textit{Restart} Node Sensor".
+    \item Sistem menyalakan ulang \textit{sensor node}.
+    \item Sistem kembali pada tampilan utama.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\label{Restart}
+\caption{Tabel skenario \textit{Restart} Node Sensor}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ |p{5cm}|p{10cm}| } 
+\hline
+\rowcolor{lightgray} Nama & Mematikan Aplikasi \\ 
+\hline
+Deskripsi & Membantu pengguna untuk mematikan program dan keluar dari aplikasi  \\ 
+\hline
+Aktor & Pengguna \\
+\hline
+Pre-kondisi & Aplikasi sedang dijalankan dan pengguna memilih "\textit{Exit}"\\
+\hline
+Alur Skenario & \begin{enumerate}
+    \item Pengguna menjalankan aplikasi.
+    \item Sistem memuat aplikasi.
+    \item Sistem menampilkan pilihan untuk dipilih oleh pengguna.
+    \item Pengguna menjalankan fitur yang ada.
+    \item Pengguna memilih "\textit{Exit}".
+    \item Sistem menyalakan \textit{sensor node}.
+    \item Sistem keluar dari aplikasi dan aplikasi berhenti berjalan.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\label{Exit}
+\caption{Tabel skenario Mematikan Aplikasi}
+\end{table}
+
+Pada subbab ini dibuat suatu diagram kelas sederhana untuk menjelaskan kelas-kelas yang dibutuhkan dalam membangun aplikasi baca tulis \textit{file}. Aplikasi ini dibangun di PC dengan menggunakan Eclipse IDE dan menggunakan Sandbox yang sudah disediakan oleh Virtenio. Aplikasi yang dibuat terdiri dari program pada \textit{base station} dan program GUI untuk menghubungkan \textit{base station} dengan komputer pengguna.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=12cm]{Gambar/BS.png}
+    \caption{Diagram Kelas Sederhana untuk \textit{base-station}}
+    \label{fig:dkbs}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=12cm]{Gambar/GUI.png}
+    \caption{Diagram Kelas Sederhana untuk GUI}
+    \label{fig:dkgui}
+\end{figure}
+\newpage
+Berikut adalah penjelasan dari kelas-kelas pada diagram pada Gambar \ref{fig:dkbs} dan Gambar \ref{fig:dkgui}.
+\begin{itemize}
+        \item Kelas BS \newline
+        Kelas ini untuk menangani fungsi-fungsi yang ada pada \textit{base station}.
+        \item Kelas USART \newline
+        Kelas ini untuk membuat koneksi antara \textit{base station} atau \textit{sensor node} Preon32 dengan komputer pengguna.
+        \item Kelas Display \newline
+        Kelas ini digunakan sebagai \textit{interface} untuk pengguna seperti menampilkan komponen \textit{sensor node}.
+        \item Kelas Main \newline
+        Kelas ini memiliki sebuah \textit{method} untuk me-\textit{restart} \textit{sensor node}, mengirim dan mengunduh \textit{file}, melihat COM, melihat kapasitas memori, dan mematikan aplikasi.
+        \item Kelas DataProcess \newline
+        Kelas ini digunakan untuk mengambil data dari \textit{base station} yang akan diproses sebelum ditampilkan menjadi bentuk visual di kelas Display.
+\end{itemize}
+
+SELESAI SELESAI 
+SELESAI SELESAI
+SELESAI SELESAI
+SELESAI SELESAI 123456789

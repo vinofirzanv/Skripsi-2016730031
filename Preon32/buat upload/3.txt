@@ -1,0 +1,28 @@
+1
+\begin{enumerate}
+    \item Melakukan analisis terhadap perangkat lunak yang dibangun.
+    \item Melakukan analisis terhadap perangkat lunak yang dibangun.
+    \item Melakukan perancangan untuk perangkat lunak yang dibangun.
+    \item Mengimplementasikan perangkat lunak sesuai hasil analisis dan rancangan.
+    \item Melakukan pengujian terhadap perangkat lunak.
+    \item Menganalisis hasil pengujian yang telah dilakukan.
+    \item Membuat dokumentasi dari penelitian pengembangan modul \textit{interface} melalui \textit{Universal Serial Bus} (USB) atau \textit{Universal Asynchronous Receiver-Transmitter} (UART).
+\end{enumerate}
+
+\section{Sistematika Pembahasan}
+\label{sec:sispem}
+Sistematika pembahasan pada Eksplorasi PreonVM dan Membangun Modul \textit{Interface} USB dengan Komputer ini adalah:
+
+    Bab 1 memuat pendahuluan yang membahas latar belakang masalah, rumusan masalah, tujuan, batasan masalah, metodologi penelitian yang menjadi acuan penelitian, dan sistematika pembahasan.
+    
+    Bab 2 memuat dasar teori yang mendukung berjalannya perancangan dan pengembangan Eksplorasi PreonVM dan Membangun Modul Interface USB dengan Komputer. Berisikan dasar teori tentang \textit{Wireless Sensor Network} (WSN), Node Sensor, Preon32, USB, UART dan USART.
+    
+    Bab 3 memuat analisis yang membahas deskripsi singkat perangkat lunak, analisis kebutuhan perangkat lunak, analisis cara kerja sistem.
+    
+    Bab 4 memuat perancangan yang membahas perancangan Eksplorasi PreonVM dan Membangun Modul \textit{Interface} USB dengan Komputer. Berisi tentang perancangan modul \textit{interface} secara rinci mengenai fitur-fitur dari perangkat lunak.
+    
+    Bab 5 memuat implementasi dan pengujian yang membahas implementasi dari hasil rancangan pengujian dari modul \textit{Interface} USB dengan Komputer yang telah dibuat dan pengujian modul yang telah dibuat.
+    
+    Bab 6 memuat kesimpulan yang membahas kesimpulan dari hasil pengujian dan saran untuk pengembangan selanjutnya.
+
+
